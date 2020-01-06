@@ -2,13 +2,14 @@
 %global gh_user starship
 
 Name:           starship
-Version:        0.32.0
+Version:        0.33.0
 Release:        1%{?dist}
 Summary:        The cross-shell prompt for astronauts
 Group:          Applications/System
 License:        GPLv2
 URL:            https://github.com/%{gh_user}/%{name}
 BuildRequires:  cmake, libgit2, openssl-devel
+Source:         https://github.com/%{gh_user}/%{name}/archive/v%{version}.tar.gz
 %{?el7:BuildRequires: cargo, rust}
 
 %description
@@ -17,19 +18,16 @@ The prompt shows information you need while you're working, while staying sleek 
 
 
 %prep
-wget https://github.com/%{gh_user}/%{name}/archive/v%{version}.tar.gz
-tar xzf v%{version}.tar.gz
-
+%setup -q -n %{name}-%{version}
 
 %build
-cd %{name}-%{version}
 cargo build --release
 
 
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/bin
-cp %{name}-%{version}/target/release/%{name} %{buildroot}/usr/bin/
+cp target/release/%{name} %{buildroot}/usr/bin/
 
 
 %clean
@@ -38,11 +36,14 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc %{name}-%{version}/LICENSE* %{name}-%{version}/*.md
+%doc LICENSE* *.md
 /usr/bin/%{name}
 
 
 %changelog
+* Tue Jan 7 2020 Jamie Curnow <jc@jc21.com> - 0.33.0-1
+- v0.33.0
+
 * Sun Dec 29 2019 Jamie Curnow <jc@jc21.com> - 0.32.2-1
 - v0.32.2
 

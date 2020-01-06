@@ -4,3 +4,4 @@
 RPMS
 SRPMS
 DEPS
+SOURCES/*.gz
