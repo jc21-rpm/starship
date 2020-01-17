@@ -2,7 +2,7 @@
 %global gh_user starship
 
 Name:           starship
-Version:        0.33.0
+Version:        0.33.1
 Release:        1%{?dist}
 Summary:        The cross-shell prompt for astronauts
 Group:          Applications/System
@@ -41,6 +41,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Jan 17 2020 Jamie Curnow <jc@jc21.com> - 0.33.1-1
+- v0.33.1
+
 * Tue Jan 7 2020 Jamie Curnow <jc@jc21.com> - 0.33.0-1
 - v0.33.0
 
