@@ -2,7 +2,7 @@
 %global gh_user starship
 
 Name:           starship
-Version:        0.52.1
+Version:        0.53.0
 Release:        1%{?dist}
 Summary:        The cross-shell prompt for astronauts
 Group:          Applications/System
@@ -16,31 +16,29 @@ Source:         https://github.com/%{gh_user}/%{name}/archive/v%{version}.tar.gz
 Starship is the minimal, blazing fast, and extremely customizable prompt for any shell!
 The prompt shows information you need while you're working, while staying sleek and out of the way.
 
-
 %prep
 %setup -q -n %{name}-%{version}
 
 %build
 cargo build --release
 
-
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/bin
 cp target/release/%{name} %{buildroot}/usr/bin/
 
-
 %clean
 rm -rf %{buildroot}
-
 
 %files
 %defattr(-,root,root,-)
 %doc LICENSE* *.md
 /usr/bin/%{name}
 
-
 %changelog
+* Tue May 4 2021 Jamie Curnow <jc@jc21.com> - 0.53.0-1
+- v0.53.0
+
 * Fri Apr 23 2021 Jamie Curnow <jc@jc21.com> - 0.52.1-1
 - v0.52.1
 
