@@ -20,7 +20,7 @@ The prompt shows information you need while you're working, while staying sleek 
 %setup -q -n %{name}-%{version}
 
 %build
-cargo build --release
+cargo build --release -Z unstable-options
 
 %install
 rm -rf %{buildroot}
