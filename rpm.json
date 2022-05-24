@@ -2,7 +2,7 @@
   "publish": {
     "PACKAGE": "starship",
     "GH_USER": "jc21-rpm",
-    "VERSION": "1.6.3"
+    "VERSION": "1.7.0"
   }
 }
 
