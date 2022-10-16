@@ -2,7 +2,7 @@
 %global gh_user starship
 
 Name:           starship
-Version:        1.10.3
+Version:        1.11.0
 Release:        1
 Summary:        The cross-shell prompt for astronauts
 Group:          Applications/System
