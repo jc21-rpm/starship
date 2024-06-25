@@ -3,7 +3,7 @@
 
 Name:           starship
 Version:        1.19.0
-Release:        1
+Release:        1%{?dist}
 Summary:        The cross-shell prompt for astronauts
 Group:          Applications/System
 License:        GPLv2
